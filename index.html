@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Testimonial Grid</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background:#edf2f8;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+  max-width:1100px;
+  display:grid;
+  gap:25px;
+
+  grid-template-columns: repeat(4,1fr);
+  grid-template-areas:
+  "card1 card1 card2 card3"
+  "card4 card5 card5 card3";
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  padding:30px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.card img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.name{
+  font-weight:600;
+}
+
+.position{
+  font-size:13px;
+  opacity:.6;
+}
+
+.title{
+  font-size:20px;
+  font-weight:600;
+}
+
+.desc{
+  font-size:14px;
+  line-height:1.6;
+  opacity:.9;
+}
+
+/* =========================
+   COLORS
+========================= */
+
+.card1{ grid-area:card1; background:#733fc8; color:white; }
+.card2{ grid-area:card2; background:#48556a; color:white; }
+.card3{ grid-area:card3; background:white; color:#333; }
+.card4{ grid-area:card4; background:white; color:#333; }
+.card5{ grid-area:card5; background:#19212e; color:white; }
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-areas:
+    "card1 card1"
+    "card2 card3"
+    "card4 card5";
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5";
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid">
+
+  <div class="card card1">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/40?img=1">
+      <div>
+        <div class="name">Daniel Clifford</div>
+        <div class="position">Verified Graduate</div>
+      </div>
+    </div>
+    <div class="title">I received a job offer mid-course</div>
+    <div class="desc">
+      I was an EMT for many years before I joined the bootcamp. I’ve successfully switched careers and now work as a Software Engineer.
+    </div>
+  </div>
+
+  <div class="card card2">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/40?img=2">
+      <div>
+        <div class="name">Jonathan Walters</div>
+        <div class="position">Verified Graduate</div>
+      </div>
+    </div>
+    <div class="title">The team was very supportive</div>
+    <div class="desc">
+      I started as a total newbie and now work as a mobile engineer. One of the best investments I’ve made.
+    </div>
+  </div>
+
+  <div class="card card3">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/40?img=3">
+      <div>
+        <div class="name">Kira Whittle</div>
+        <div class="position">Verified Graduate</div>
+      </div>
+    </div>
+    <div class="title">Life-changing experience</div>
+    <div class="desc">
+      Before joining the bootcamp I never wrote a line of code. Now I work as a full-stack developer.
+    </div>
+  </div>
+
+  <div class="card card4">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/40?img=4">
+      <div>
+        <div class="name">Jeanette Harmon</div>
+        <div class="position">Verified Graduate</div>
+      </div>
+    </div>
+    <div class="title">Wonderful experience</div>
+    <div class="desc">
+      I now have a job I really enjoy and make a good living doing something I love.
+    </div>
+  </div>
+
+  <div class="card card5">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/40?img=5">
+      <div>
+        <div class="name">Patrick Abrams</div>
+        <div class="position">Verified Graduate</div>
+      </div>
+    </div>
+    <div class="title">Awesome teaching support</div>
+    <div class="desc">
+      The staff genuinely cared about my progress. The program gave me confidence to start my career.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
